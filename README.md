@@ -35,7 +35,16 @@ or
 export LIBTOOLIZE=glibtoolize
  ./zcutil/build-mac-clang.sh --disable-libs -j4
  ```
-
+ ### Build with the tools already compiled (example having all the source in ~/sources/)
+```shell
+$ cd ~/zencash-apple
+$ source environment
+$ cd ~/zencash
+$ export LIBTOOLIZE=glibtoolize
+$ ./zcutil/build-mac-clang.sh --disable-libs -j4 
+```
+ 
+ 
 ### Disclaimer
 this is a fork of https://github.com/kozyilmaz/zcash-apple.git
 
