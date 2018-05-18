@@ -35,7 +35,7 @@ or
 export LIBTOOLIZE=glibtoolize
  ./zcutil/build-mac-clang.sh --disable-libs -j4
  ```
- ### Build with the tools already compiled (example having all the source in ~/sources/)
+ ### Build with the tools already compiled (example having all the sources in the ~/sources/ folder)
 ```shell
 $ cd ~/zencash-apple
 $ source environment
