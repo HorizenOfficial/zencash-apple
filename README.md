@@ -4,7 +4,7 @@
 ```shell
 # run once to install Xcode CLI tools
 $ xcode-select --install
-# clone and build Zcash on macOS
+# clone and build Zencash 
 $ git clone https://github.com/ZencashOfficial/zencash-apple.git
 $ cd zencash-apple
 $ source environment
