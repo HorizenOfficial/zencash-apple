@@ -4,7 +4,7 @@ ifeq ($(BSPROOT),)
 endif
 
 subdir-y := tools
-subdir-y += zcash
+#subdir-y += zcash
 
 zcash_depends-y = \
 	tools
