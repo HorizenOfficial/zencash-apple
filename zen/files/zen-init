@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# excerpted from zclassic/zutil/init-mac.sh
+
+if [ ! -f "$HOME/Library/Application Support/Zen/zen.conf" ]; then
+	echo "Creating zen.conf"
+	mkdir -p "$HOME/Library/Application Support/Zen/"
+	echo "rpcuser=zcashrpc" > ~/Library/Application\ Support/Zen/zen.conf
+	PASSWORD=$(cat /dev/urandom | env LC_CTYPE=C tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
+	echo "rpcpassword=$PASSWORD" >> "$HOME/Library/Application Support/Zen/zen.conf"
+	echo "Complete!"
+fi
