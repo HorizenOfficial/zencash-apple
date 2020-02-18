@@ -3,7 +3,7 @@ target_name ?= zen
 
 include ../Makefile.build
 
-ZEN_VERSION=v2.0.17
+ZEN_VERSION=v2.0.20
 
 zen_clone:
 	if [ ! -d "zen_$(ZEN_VERSION)" ]; then git clone -b $(ZEN_VERSION) https://github.com/ZencashOfficial/zen.git zen_$(ZEN_VERSION); fi
