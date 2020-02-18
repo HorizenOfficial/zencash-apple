@@ -1,7 +1,5 @@
 # Yet Another Zencash Builder for Apple Platform
 
-![Screenshot](https://github.com/kozyilmaz/zcash-apple/raw/master/docs/zcash-apple.png "Zcash on Mac OS")
-
 **This project requires Xcode 9 and a Mac running macOS 10.12.6 or later.**  
 This repository builds standalone Zen binaries for macOS platform without installing brew.  
 All build tools (`autoconf, automake, libtool, pkgconfig, cmake, install and readlink`) and `Zen` are compiled from scratch.  
@@ -18,6 +16,11 @@ $ source environment
 $ make
 ```
 
+For those who are trying to compile on OS X Catalina, you many need to run the following if you receive any errors about missing headers
+```shell
+$ sudo ln -s /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/* /usr/local/include/
+```
+
 In case of an error please run the following command for debug info
 ```shell
 $ PRINT_DEBUG=y make all
@@ -26,26 +29,26 @@ After successful build Zen binaries will be installed to `out` directory under p
 You can then copy binary directory anywhere you like there are no dependencies to the build tree anymore  
 ```shell
 bash-3.2$ ls -lrt out/usr/local/bin
-total 32136
--rwxr-xr-x@ 1 loki  staff       483 Feb 25 21:19 zen-init
--rw-r--r--@ 1 loki  staff      1766 Feb 25 21:19 zen-commands.txt
--rwxr-xr-x@ 1 loki  staff  13369544 Feb 25 21:39 zend
--rwxr-xr-x@ 1 loki  staff   1814860 Feb 25 21:39 zen-tx
--rwxr-xr-x@ 1 loki  staff      4761 Feb 25 21:39 zen-fetch-params
--rwxr-xr-x@ 1 loki  staff   1238732 Feb 25 21:39 zen-cli
--rw-r--r--@ 1 loki  staff        54 Feb 25 21:39 version.txt
+total 42008
+-rw-r--r--  1 loki  staff   1.7K 18 Feb 13:19 zen-commands.txt
+-rwxr-xr-x  1 loki  staff   467B 18 Feb 13:19 zen-init*
+-rwxr-xr-x  1 loki  staff    17M 18 Feb 14:06 zend*
+-rwxr-xr-x  1 loki  staff   1.5M 18 Feb 14:06 zen-cli*
+-rwxr-xr-x  1 loki  staff   2.2M 18 Feb 14:06 zen-tx*
+-rwxr-xr-x  1 loki  staff   6.8K 18 Feb 14:06 zen-fetch-params*
+
 bash-3.2$ otool -L out/usr/local/bin/zend
 out/usr/local/bin/zend:
-    /usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1252.0.0)
-    /usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 400.9.0)
+	/usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 800.7.0)
+	/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1281.0.0)
 bash-3.2$ otool -L out/usr/local/bin/zen-cli 
 out/usr/local/bin/zen-cli:
-    /usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 400.9.0)
-    /usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1252.0.0)
+	/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1281.0.0)
+	/usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 800.7.0)
 bash-3.2$ otool -L out/usr/local/bin/zen-tx
 out/usr/local/bin/zen-tx:
-    /usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 400.9.0)
-    /usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1252.0.0)
+	/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1281.0.0)
+	/usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 800.7.0)
 ```
 
 ### Run instructions
@@ -147,7 +150,8 @@ should look like this:
 ## Thanks
 Developers of `Zcash`  
 Developers of `ZClassic` for MacOS patches
-Developers of `Zencash` 
+
+Developers of `Horizen` 
 ## Donations
 If you feel this project is useful to you. Feel free to donate.
 
