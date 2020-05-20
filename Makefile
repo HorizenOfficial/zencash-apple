@@ -4,9 +4,9 @@ ifeq ($(BSPROOT),)
 endif
 
 subdir-y := tools
-#subdir-y += zcash
+subdir-y += zen
 
-zcash_depends-y = \
+zen_depends-y = \
 	tools
 
 include Makefile.lib

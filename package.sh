@@ -27,23 +27,23 @@ else
    release_version=$git_tag_string
 fi
 
-echo "zcash-for-macos commit version : $git_rev_string"
-echo "zcash-for-macos tag version    : $git_tag_string"
-echo "creating 'zcash-macos-$release_version' release"
+echo "zen-for-macos commit version : $git_rev_string"
+echo "zen-for-macos tag version    : $git_tag_string"
+echo "creating 'zen-macos-$release_version' release"
 
 # prepare environment
 source environment;
 export BSPJOB=16;
-export BSPINSTALL=${BSPROOT}/zcash-macos-$release_version;
+export BSPINSTALL=${BSPROOT}/zen-macos-$release_version;
 
 # build tools
 make
 echo $git_rev_string  > ${BSPINSTALL}/usr/local/bin/version.txt
 echo $git_tag_string >> ${BSPINSTALL}/usr/local/bin/version.txt
-echo "Zcash for macOS ($release_version) is installed to ${BSPINSTALL}"
+echo "Zen for macOS ($release_version) is installed to ${BSPINSTALL}"
 
 # create tarball and checksum
-echo "creating Zcash tarball 'zcash-macos-$release_version.tar.bz2' and checksum"
-tar -cjvf zcash-macos-$release_version.tar.bz2 zcash-macos-$release_version
-shasum -a 256 zcash-macos-$release_version.tar.bz2 > zcash-macos-$release_version.tar.bz2.hash
-shasum -a 256 -c zcash-macos-$release_version.tar.bz2.hash
+echo "creating Zen tarball 'zen-macos-$release_version.tar.bz2' and checksum"
+tar -cjvf zen-macos-$release_version.tar.bz2 zen-macos-$release_version
+shasum -a 256 zen-macos-$release_version.tar.bz2 > zen-macos-$release_version.tar.bz2.hash
+shasum -a 256 -c zen-macos-$release_version.tar.bz2.hash
