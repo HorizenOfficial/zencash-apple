@@ -5,7 +5,7 @@
 # run once to install Xcode CLI tools
 $ xcode-select --install
 # clone and build Zencash 
-$ git clone https://github.com/ZencashOfficial/zencash-apple.git
+$ git clone https://github.com/HorizenOfficial/zencash-apple.git
 $ cd zencash-apple
 $ source environment
 $ make
@@ -19,7 +19,7 @@ Clone the ZenCash repository and fetch the necessary parameters:
 Build using the following command (with NUM_CORES = number of cores to use for the build process):
 
 ```shell
-git clone https://github.com/ZencashOfficial/zencash.git
+git clone https://github.com/HorizenOfficial/zencash.git
 cd zencash/
 ./zcutil/fetch-params.sh
 LIBTOOLIZE=glibtoolize ./zcutil/build-mac-clang.sh --disable-libs -j(NUM_CORES)
