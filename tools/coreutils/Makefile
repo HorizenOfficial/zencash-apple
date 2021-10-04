@@ -6,7 +6,7 @@ include ../Makefile.build
 COREUTILS_VERSION="8.28"
 
 coreutils_clone:
-	if [ ! -f "coreutils-$(COREUTILS_VERSION).tar.xz" ]; then curl -OL https://ftp.gnu.org/gnu/coreutils/coreutils-$(COREUTILS_VERSION).tar.xz; fi;
+	if [ ! -f "coreutils-$(COREUTILS_VERSION).tar.xz" ]; then curl -OL https://downloads.horizen.io/file/depends-sources/coreutils-$(COREUTILS_VERSION).tar.xz; fi;
 	if [ ! -d "coreutils-$(COREUTILS_VERSION)" ]; then tar xzf coreutils-$(COREUTILS_VERSION).tar.xz; fi
 
 coreutils_config:
