@@ -6,7 +6,7 @@ include ../Makefile.build
 CMAKE_VERSION="3.10.0"
 
 cmake_clone:
-	if [ ! -f "cmake-$(CMAKE_VERSION).tar.gz" ]; then curl -OL https://cmake.org/files/v3.10/cmake-$(CMAKE_VERSION).tar.gz; fi;
+	if [ ! -f "cmake-$(CMAKE_VERSION).tar.gz" ]; then curl -OL https://downloads.horizen.io/file/depends-sources/cmake-$(CMAKE_VERSION).tar.gz; fi;
 	if [ ! -d "cmake-$(CMAKE_VERSION)" ]; then tar xzf cmake-$(CMAKE_VERSION).tar.gz; fi
 
 cmake_config:
